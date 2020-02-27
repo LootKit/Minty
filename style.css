@@ -1,0 +1,194 @@
+@font-face {
+  font-family: 'Major Mono Display';
+  src: url("MajorMonoDisplay-Regular.ttf");
+}
+*,
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  background: #60ff70;
+  background: linear-gradient(127deg, #60ff70, #21ded3);
+  background-attachment: fixed;
+  font-family: 'Major Mono Display';
+  font-size: 1em;
+  color: #333;
+}
+#parappa-the-wrapper {
+  min-width: 400px;
+  min-height: 730px;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+}
+#body-card {
+  width: 100%;
+  max-width: 900px;
+  height: 100%;
+  margin-bottom: 25px;
+  background: #f2f2f2;
+  border: 5px solid #333;
+  border-radius: 10px;
+  box-shadow: 8px 8px #333;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 125px 9fr 2fr;
+}
+header {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 1fr;
+}
+header #logo {
+  padding-left: 10px;
+  align-self: center;
+}
+header #logo img {
+  width: auto;
+  max-width: 100%;
+  max-height: 100px;
+}
+header #intro {
+  padding-top: 10px;
+  padding-right: 10px;
+}
+header #intro h1 {
+  font-size: 1em;
+  line-height: 1.1em;
+}
+main {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+}
+main #required-props {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
+  grid-template-areas: 'name name' 'issuer issuee';
+}
+main #required-props #name {
+  grid-area: name;
+  justify-self: center;
+}
+main #required-props #issuer {
+  grid-area: issuer;
+  text-align: center;
+}
+main #required-props #issuee {
+  grid-area: issuee;
+  text-align: center;
+}
+main #optional-props {
+  margin-top: -15px;
+  margin-bottom: 25px;
+}
+main #optional-props h2 {
+  font-size: 1em;
+}
+main #token-lock {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 3fr 4fr auto;
+  grid-template-areas: 'token token' 'amount button' 'list list';
+}
+main #token-lock #token-list {
+  grid-area: token;
+}
+main #token-lock #lock-amount {
+  grid-area: amount;
+}
+main #token-lock button {
+  grid-area: button;
+}
+main #token-lock #lock-list {
+  grid-area: list;
+}
+#prop-8 {
+  border: 2px solid #21ded3;
+}
+footer {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+p {
+  font-size: 0.75em;
+  font-style: italic;
+  line-height: 1.2em;
+  font-weight: 600;
+  color: #666;
+}
+label:hover {
+  font-weight: bold;
+}
+label:hover input {
+  font-weight: bold;
+}
+input {
+  padding: 10px;
+  margin: 5px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  font-family: 'Consolas', monospace;
+  font-size: 0.75em;
+}
+button {
+  padding: 10px;
+  background: #f2f2f2;
+  border: 3px solid #333;
+  border-radius: 8px;
+  box-shadow: 5px 5px #333;
+  font-family: 'Major Mono Display';
+  font-size: 1em;
+}
+button:hover {
+  box-shadow: 3px 3px #333;
+  margin: 2px 0px 0px 2px;
+}
+button:active {
+  box-shadow: 1px 1px #333;
+  margin: 4px 0px 0px 4px;
+}
+button:disabled {
+  background: #333;
+}
+#loading-text {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  height: 100vh;
+  background-color: rgba(123,255,123,0.75);
+  color: #f2f2f2;
+  text-shadow: 3px 3px 0px #333;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 4.2em;
+}
+@media screen and (min-width: 750px) {
+  main #token-lock {
+    grid-template-areas: 'token amount' 'button button' 'list list';
+  }
+  main #token-lock button {
+    margin-bottom: 15px;
+  }
+  main #token-lock #token-lock-amount {
+    width: 100px;
+  }
+}

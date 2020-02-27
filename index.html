@@ -1,0 +1,86 @@
+<!DOCTYPE html lang="en-us" xml:lang="en-us">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Language" content="en-us">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>LootKit Minty</title>
+        <meta name="description" content="LootKit Minty allows you to mint NFTs on the Steem blockchain with ease">
+
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sscjs@latest/dist/ssc.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div id="parappa-the-wrapper">
+            <div id="body-card">
+                <header>
+                    <div id="logo">
+                        <img src="minty-logo.png" alt="minty logo"/>
+                    </div>
+
+                    <div id="intro">
+                        <h1>issue some "sets" nfts</h1>
+                        <p>cheaper than doing full blown nfts, think of "sets" as a sandbox / trial run for your dapp</p>
+                    </div>
+                </header>
+                
+                <main>
+                    <div id="required-props">
+                        <label id="name" for="prop-name">nft name:
+                            <input id="prop-name" type="text" placeholder="name your NFT">
+                        </label>
+
+                        <label id="issuer" for="prop-issuer">nft issuer:
+                            <input id="prop-issuer" type="text" placeholder="your steem account">
+                        </label>
+
+                        <label id="issuee" for="prop-issuee">issue to:
+                            <input id="prop-issuee" type="text" placeholder="receiving steem account">
+                        </label>
+                    </div>
+
+                    <div id="optional-props">
+                        <h2>define some attributes/properties</h2>
+                        <p>(max of 100 characters each. props 1-7 can't be changed after issuing - good for static values like names, ids, timestamps. prop-8 can be changed - good for updatable values like health, experience, gold)</p>
+                        <input id="prop-1" type="text" maxlength="100" placeholder="Property1">
+                        <input id="prop-2" type="text" maxlength="100" placeholder="Property2">
+                        <input id="prop-3" type="text" maxlength="100" placeholder="Property3">
+                        <input id="prop-4" type="text" maxlength="100" placeholder="Property4">
+                        <input id="prop-5" type="text" maxlength="100" placeholder="Property5">
+                        <input id="prop-6" type="text" maxlength="100" placeholder="Property6">
+                        <input id="prop-7" type="text" maxlength="100" placeholder="Property7">
+                        <input id="prop-8" type="text" maxlength="100" placeholder="Property8">
+                    </div>
+
+                    <div id="token-lock">
+                        <label id="token-list" for="engine-tokens">token to lock:
+                            <input id="engine-tokens" list="engine-token-list" placeholder="select token" />
+                            <datalist id="engine-token-list"></datalist>
+                        </label>
+
+                        <label id="lock-amount" for="token-lock-amount">amount to lock:
+                            <input id="token-lock-amount" type="number" value="0" min="0" />
+                        </label>
+
+                        <button id="lock-token-button" onclick="lock_token()">lock up this token</button>
+
+                        <div id="lock-list">
+                            <h3>locked tokens:</h3>
+                            <p>(max of 10, click token to remove it)</p>
+                            <ul id="locked-token-list"></ul>
+                        </div>
+                    </div>
+                </main>
+                
+                <footer>
+                    <button onclick="issue_new_token()">issue new "sets" token</button+>
+                </footer>
+            </div>
+        </div>
+
+        <h1 id="loading-text">loading...<br><em>please wait</em></h1>
+    </body>
+</html>
