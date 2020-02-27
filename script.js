@@ -66,8 +66,8 @@ function remove_locked_token(token) {
 }
 
 function issue_new_token() {
-    issue_to = document.getElementById('prop-issuer').value
-    issuer = document.getElementById('prop-issuee').value
+    issuer = document.getElementById('prop-issuer').value
+    issue_to = document.getElementById('prop-issuee').value
 
     let name = document.getElementById('prop-name').value
     let prop1 = document.getElementById('prop-1').value
